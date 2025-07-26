@@ -1,0 +1,120 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #222;
+  --card: #fff;
+  --sidebar: #0077cc;
+}
+
+body.dark {
+  --bg: #111;
+  --text: #fff;
+  --card: #1e1e1e;
+  --sidebar: #005fa3;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  background: var(--sidebar);
+  color: white;
+  padding: 20px;
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar button {
+  margin-top: 10px;
+  padding: 10px;
+  background: white;
+  color: var(--sidebar);
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.page.hidden {
+  display: none;
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--sidebar);
+  color: white;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.dropdown button {
+  margin: 2px 0;
+  background-color: #eee;
+  color: #000;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .sidebar nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+}

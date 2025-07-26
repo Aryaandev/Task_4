@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnHub - Online Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <h2>LearnHub</h2>
+            <button onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+            <nav>
+                <button onclick="toggleDropdown()">📚 Courses ▾</button>
+                <div id="course-dropdown" class="dropdown hidden">
+                    <button onclick="selectCourse('B.Tech')">B.Tech</button>
+                    <button onclick="selectCourse('BCA')">BCA</button>
+                    <button onclick="selectCourse('BBA')">BBA</button>
+                </div>
+                <button onclick="showPage('video')">🎥 Video Lessons</button>
+                <button onclick="showPage('quiz')">📝 Quizzes</button>
+                <button onclick="showPage('progress')">📊 Progress</button>
+                <button onclick="showPage('leaderboard')">🏅 Leaderboard</button>
+
+                <button onclick="logout()">🚪 Logout</button>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <section id="course-section" class="page hidden">
+                <h2>Selected Course: <span id="selected-course">None</span></h2>
+                <p>Course-specific lessons and quizzes will appear here.</p>
+            </section>
+
+
+
+            <section id="login-page">
+                <h2>Login</h2>
+                <input type="text" id="username" placeholder="Enter your name" />
+                <button onclick="login()">Login</button>
+            </section>
+
+            <section id="video" class="page hidden">
+                <h2>Video Lessons</h2>
+                <video controls width="100%">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </section>
+
+            <section id="quiz" class="page hidden">
+                <h2>Quiz</h2>
+                <div id="quiz-container">
+                    <p id="question">Loading...</p>
+                    <div id="options"></div>
+                    <button onclick="nextQuestion()">Next</button>
+                </div>
+            </section>
+
+            <section id="progress" class="page hidden">
+                <h2>Progress Tracker</h2>
+                <p id="progress-data">Loading progress...</p>
+                <button onclick="generateCertificate()">🎓 Download Certificate</button>
+                <canvas id="certificate" width="800" height="600" style="display:none;"></canvas>
+            </section>
+
+            <section id="leaderboard" class="page hidden">
+                <h2>🏅 Leaderboard</h2>
+                <ul id="leaderboard-list"></ul>
+            </section>
+
+        </main>
+    </div>
+<!-- <canvas id="certificate" width="800" height="600" style="border:1px solid #ccc; display:block; margin:20px auto;"></canvas> -->
+<img id="signature" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Signature_of_Albert_Einstein.svg" style="display:none;">
+<img id="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=LearnHub" style="display:none;">
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
